@@ -37,6 +37,8 @@ function addBomb() {
 const box = document.getElementById("box");
 const play = document.getElementById("start");
 let mode = document.getElementById("values");
+let result = document.getElementById("risultato")
+let points = 0
 
 
 play.addEventListener("click", function () {
@@ -65,9 +67,11 @@ play.addEventListener("click", function () {
             if (bomb.includes(c)) {
                 this.classList.toggle("bomb")
                 console.log(`Hai selezionato il quadrato numero: ${square[c].innerHTML}`);
+                result.innerHTML = `Mi dispiace, hai perso, il tuo punteggio è: ${points}`
             } else {
                 this.classList.toggle("clicked")
                 console.log(`Hai selezionato il quadrato numero: ${square[c].innerHTML}`)
+                points++
             }
         })
         

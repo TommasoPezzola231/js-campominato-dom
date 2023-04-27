@@ -9,6 +9,7 @@
 
 header {
     padding: 2rem;
+    height: 80px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -24,13 +25,14 @@ button {
 
 main {
     background-color: #7fffd4;
-    padding: 4rem 0;
+    padding: 1rem 0;
+    height: calc(100vh - 120px);
 }
 
 #box {
-    width: 700px;
-    height: 700px;
-    margin: 0 auto;
+    width: 550px;
+    aspect-ratio: 1;
+    margin: auto;
     border: 2px solid black;
     display: flex;
     flex-wrap: wrap;
@@ -47,6 +49,13 @@ main {
     text-align: center;
     align-items: center;
     justify-content: center;
+}
+
+#risultato {
+    text-align: center;
+    font-weight: bold;
+    margin-top: 1rem;
+    font-size: 20px;
 }
 
 .easy {
@@ -71,5 +80,6 @@ main {
 /*******FOOTER********/
 
 footer {
+    height: 40px;
     padding: 1rem;
 }
