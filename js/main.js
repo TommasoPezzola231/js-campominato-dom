@@ -14,7 +14,7 @@ function randomNumber(maxNumber) {
     let numbers = []
     let number; 
 
-    while (numbers.length == 16 ) {
+    while (numbers.length < 16 ) {
 
         number = (Math.floor(Math.random() * maxNumber));
 
@@ -40,7 +40,6 @@ play.addEventListener("click", function () {
     creaSquare(mode.value);
     
     let square = document.getElementsByClassName("square");
-    
     
     for (let c = 0; c < mode.value; c++) {
         
