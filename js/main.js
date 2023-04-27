@@ -28,24 +28,21 @@ function randomNumber(maxNumber) {
     return numbers;
 }
 
-function addBomb() {
-    
-    
-
-}
 
 const box = document.getElementById("box");
 const play = document.getElementById("start");
 let mode = document.getElementById("values");
 let result = document.getElementById("risultato")
-let points = 0
 
 
 play.addEventListener("click", function () {
     box.innerHTML = ""
     console.log("Play!");
-
+    
+    box.classList.remove("cheat")
     creaSquare(mode.value);
+    let points = 0;
+    result.innerHTML = ``
     
     let square = document.getElementsByClassName("square");
     
@@ -65,11 +62,16 @@ play.addEventListener("click", function () {
         square[c].addEventListener("click", function () {
 
             if (bomb.includes(c)) {
-                this.classList.toggle("bomb")
-                console.log(`Hai selezionato il quadrato numero: ${square[c].innerHTML}`);
-                result.innerHTML = `Mi dispiace, hai perso, il tuo punteggio è: ${points}`
+                for (let i = 0; i < bomb.length; i++) {
+                    
+                    square[bomb[i]].classList.add("bomb")
+                    
+                }
+                console.log(`Hai perso, la casella numero: ${square[c].innerHTML} era una bomba`);
+                result.innerHTML = `Mi dispiace, hai perso! la casella numero: ${square[c].innerHTML} era una bomba il tuo punteggio è: ${points}`
+                box.classList.add("cheat")  //è barare?
             } else {
-                this.classList.toggle("clicked")
+                this.classList.add("clicked")
                 console.log(`Hai selezionato il quadrato numero: ${square[c].innerHTML}`)
                 points++
             }
@@ -79,4 +81,3 @@ play.addEventListener("click", function () {
 
 
 })
-

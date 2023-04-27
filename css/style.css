@@ -29,6 +29,10 @@ main {
     height: calc(100vh - 120px);
 }
 
+.cheat {
+    pointer-events: none;
+}
+
 #box {
     width: 550px;
     aspect-ratio: 1;
