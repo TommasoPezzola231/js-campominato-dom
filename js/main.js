@@ -28,6 +28,12 @@ function randomNumber(maxNumber) {
     return numbers;
 }
 
+function addBomb() {
+    
+    
+
+}
+
 const box = document.getElementById("box");
 const play = document.getElementById("start");
 let mode = document.getElementById("values");
@@ -41,6 +47,9 @@ play.addEventListener("click", function () {
     
     let square = document.getElementsByClassName("square");
     
+    let bomb = randomNumber(mode.value)
+    
+
     for (let c = 0; c < mode.value; c++) {
         
         if (mode.value == 49) {
@@ -52,10 +61,18 @@ play.addEventListener("click", function () {
         }
         
         square[c].addEventListener("click", function () {
-            this.classList.toggle("clicked")
-            console.log(`Hai selezionato il quadrato numero: ${square[c].innerHTML}`)
+
+            if (bomb.includes(c)) {
+                this.classList.toggle("bomb")
+                console.log(`Hai selezionato il quadrato numero: ${square[c].innerHTML}`);
+            } else {
+                this.classList.toggle("clicked")
+                console.log(`Hai selezionato il quadrato numero: ${square[c].innerHTML}`)
+            }
         })
         
     }
+
+
 })
 

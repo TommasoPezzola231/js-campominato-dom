@@ -59,8 +59,12 @@ main {
     height: calc(100% / 9);
 }
 
+.bomb {
+    background-color: crimson;
+}
+
 .clicked {
-    background-color: salmon;
+    background-color: blue;
 }
 
 
