@@ -13,25 +13,16 @@ function randomNumber(maxNumber) {
 
     let numbers = []
     let number; 
-    let x = true;
-    
-    for (let i = 0; i < 16; i++) {
-        
 
-        
-        for (let c = 0; c < 16; c++) {
-            
-            number = (Math.floor(Math.random() * maxNumber));
-            if (number == numbers[c]) {
-                x = false
-            }
-            
-        }
-        
+    while (numbers.length == 16 ) {
 
-        if (x = true) {
+        number = (Math.floor(Math.random() * maxNumber));
+
+        if (numbers.includes(number)) {
+            console.log("Numero già esistente")
+        } else {
             numbers.push(number)
-    }
+        }
     }
     
     return numbers;
